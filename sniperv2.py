@@ -1,3 +1,5 @@
+## getting the target to appear and randomize
+
 import pygame
 import random
 import time
