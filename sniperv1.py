@@ -11,23 +11,25 @@ class Ball:
         self.y = y_axis
         self.speed_x = 0
         self.speed_y = 0
-        self. radius = 5
+        self.radius = 5
+        self.radius2 = 30
 
     def update(self):
         self.x += self.speed_x
         self.y += self.speed_y
 
     def render(self, screen):
+        pygame.draw.circle(screen,(250, 250, 250), (self.x, self.y), self.radius2)
         pygame.draw.circle(screen, (0, 0, 0), (self.x, self.y), self.radius)
 
 def main():
-    width = 800
-    height = 800
-    white_color = (250, 250, 250)#black_color = (0, 0, 0)
+    width = 500
+    height = 500
+    white_color = (0, 0, 0)#black_color = (0, 0, 0)
     pygame.init()
     screen = pygame.display.set_mode((width, height))
 
-    ball = Ball(400, 400)
+    ball = Ball(250, 250)
 
     stop_game = False
     while not stop_game:
@@ -59,9 +61,9 @@ def main():
         screen.fill(white_color)#screen.fill(black_color) #save until the end
 
         ball.render(screen)
-        font = pygame.font.Font(None, 25)
-        text = font.render("", True, (0, 0, 0))
-        screen.blit(text, (80, 230))
+        # font = pygame.font.Font(None, 25)
+        # text = font.render("", True, (0, 0, 0))
+        # screen.blit(text, (80, 230))
 
         pygame.display.update()
 
